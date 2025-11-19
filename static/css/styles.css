@@ -1,0 +1,135 @@
+:root {
+    --nav-height: 4.5rem;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text-dark: #0f172a;
+    --muted: #5c6b80;
+    --bg-soft: #f7f9fc;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-soft);
+}
+
+.navbar {
+    transition: all 0.3s ease;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.navbar.navbar-shrink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+header.hero {
+    padding: calc(var(--nav-height) + 4rem) 0 6rem;
+    background: linear-gradient(180deg, #1e3a8a 0%, #2563eb 60%, #60a5fa 100%);
+}
+
+header.hero h1,
+header.hero p {
+    color: #fff;
+}
+
+.hero-cta .btn-light {
+    color: var(--primary-dark);
+}
+
+section {
+    padding: 5rem 0;
+}
+
+#about ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#about ul li {
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+#about ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.card-glass {
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+}
+
+.services-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(37, 99, 235, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+    background: rgba(59, 130, 246, 0.15);
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+#prediksi {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.08));
+}
+
+#prediksi .form-control,
+#prediksi .form-select {
+    border-radius: 0.85rem;
+    padding: 0.85rem 1rem;
+}
+
+#prediksi .btn-primary {
+    min-width: 220px;
+    font-weight: 600;
+    box-shadow: 0 20px 35px rgba(37, 99, 235, 0.3);
+}
+
+#contact .contact-card {
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    padding: 1.75rem;
+    background: #fff;
+}
+
+footer {
+    padding: 2.5rem 0;
+    background: #0f172a;
+    color: #cbd5f5;
+}
+

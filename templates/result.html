@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hasil Prediksi Stroke</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <style>
+            body {
+                background: radial-gradient(circle at top, #d9ecff 0%, #f7f9fc 65%);
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="/">Stroke Insight</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#prediksi">Prediksi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/insight">Insight Model</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero text-white text-center">
+            <div class="container px-4">
+                <h1 class="fw-bolder mb-3">Hasil Analisis Stroke</h1>
+                <p class="lead">Berikut ringkasan status risiko dan probabilitas dari data yang Anda masukkan.</p>
+            </div>
+        </header>
+
+        <section>
+            <div class="container px-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card card-glass p-5 text-center">
+                            <div class="pill mb-4">
+                                <span>Status Risiko:</span>
+                                <span>{{ result }}</span>
+                            </div>
+                            <p class="lead mb-1">Probabilitas stroke: <strong>{{ probability }}</strong></p>
+                            <p class="text-muted mb-4">{{ risk_summary }}</p>
+                            <div class="text-start">
+                                <h5 class="fw-semibold">Faktor yang memengaruhi skor:</h5>
+                                <ul class="text-muted">
+                                    {% for item in factors %}
+                                    <li>{{ item }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <a href="/" class="btn btn-primary btn-lg mt-3">Kalkulasi Ulang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container px-4">
+                <p class="m-0 text-center">Kembali ke halaman utama untuk mencoba data pasien lainnya.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>
